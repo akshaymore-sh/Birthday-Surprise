@@ -1,0 +1,672 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    font-family:'Poppins', sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #ffd6e8 0%,
+        #ffd0df 30%,
+        #f6d9ff 65%,
+        #fff2f7 100%
+    );
+
+    color:#5b5560;
+
+}
+
+.container{
+
+    width:min(90%, 750px);
+
+    text-align:center;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:0 20px 60px rgba(255,105,180,.18);
+
+}
+
+h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:64px;
+
+    color:#7a2946;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        2px 2px 8px rgba(255,255,255,0.6);
+
+}
+
+p{
+
+    font-size:24px;
+
+    color:#4b4453;
+
+    margin-bottom:40px;
+
+    line-height:1.8;
+
+}
+
+button{
+
+    padding:16px 40px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ff5c8d,
+        #ff3f78
+    );
+
+    box-shadow:0 8px 25px rgba(255,80,130,.35);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:0 12px 30px rgba(255,80,130,.45);
+
+}
+
+
+/* ===========================
+   Loading Screen
+=========================== */
+
+#loadingScreen{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:linear-gradient(
+    135deg,
+    #ffe6f0,
+    #ffd6e8,
+    #f8dcff
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+.loader{
+
+    text-align:center;
+
+}
+
+.loadingHeart{
+
+    font-size:100px;
+
+    margin-bottom:25px;
+
+    animation:heartbeat 1.2s infinite;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,105,180,.45))
+        drop-shadow(0 0 30px rgba(255,105,180,.35));
+
+}
+
+.progress-bar{
+
+    width:400px;
+
+    height:12px;
+
+    background:rgba(255,255,255,.45);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#progress{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #ff5c8d,
+        #ff3f78
+    );
+
+    border-radius:999px;
+
+}
+
+#loadingText{
+
+    font-size:30px;
+
+    font-weight:600;
+
+    color:#5b5560;
+
+    margin-top:18px;
+
+}
+
+/* ==========================
+   LOADING FLOWERS
+========================== */
+
+#loadingFlowers{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.loadingFlower{
+
+    position:absolute;
+
+    top:-50px;
+
+    font-size:24px;
+
+    opacity:.9;
+
+    animation:loadingFlowerFall linear forwards;
+
+}
+
+@keyframes loadingFlowerFall{
+
+    from{
+
+        transform:
+        translateY(-60px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+    }
+
+}
+
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes heartbeat{
+
+    0%{ transform:scale(1); }
+
+    50%{ transform:scale(1.2); }
+
+    100%{ transform:scale(1); }
+
+}
+
+/* ==========================
+   FALLING FLOWERS
+========================== */
+
+#flowers{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.flower{
+
+    position:absolute;
+
+    top:-60px;
+
+    animation:fall linear infinite;
+
+    opacity:.85;
+
+}
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-60px)
+        translateX(0px)
+        rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(50vh)
+        translateX(40px)
+        rotate(180deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        translateX(-30px)
+        rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   Welcome Screen
+=========================== */
+
+#welcomeScene{
+
+    transition:opacity 1.5s ease;
+}
+
+
+/* ===========================
+   Common Scene Style
+=========================== */
+
+.scene{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:opacity .8s ease;
+
+}
+
+
+/* ===========================
+   Chapter One
+=========================== */
+
+
+
+/* ===========================
+   Chapter Two
+=========================== */
+
+#chapterTwo{
+
+    position:relative;
+
+}
+
+
+/* ===========================
+   Chapter Three
+=========================== */
+
+#chapterThree{
+
+    position:relative;
+
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+#continueBtn,
+#galleryBtn,
+#nextMemoryBtn{
+
+    display:none;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+    margin-top:40px;
+
+}
+
+
+/* ===========================
+   Memory Image
+=========================== */
+
+#memoryImage{
+
+    width:320px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    opacity:0;
+
+    transition:opacity .8s ease;
+
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* ==========================
+   CHAPTER FOUR - VIDEO
+========================== */
+#chapterFour{
+
+    position:relative;
+
+}
+
+#loveVideo{
+
+    width:80%;
+
+    max-width:850px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+
+    margin-top:30px;
+
+}
+
+#letterBtn{
+
+    display:none;
+
+    opacity:0;
+
+    transition:1s;
+
+    margin-top:35px;
+
+}
+
+/* ==========================
+   CHAPTER FIVE
+========================== */
+
+#chapterFive{
+
+    position:relative;
+
+}
+
+#finalBtn{
+
+    display:none;
+
+    opacity:0;
+
+    transition:1s;
+
+    margin-top:40px;
+
+}
+
+/* ==========================
+   CHAPTER SIX
+========================== */
+
+#chapterSix{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:linear-gradient(135deg,#ff4d6d,#ff8fab,#ffc2d1);
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:2s;
+
+    z-index:999;
+
+}
+
+.birthdayTitle{
+
+    font-size:90px;
+
+    color:white;
+
+    animation:pulse 2s infinite;
+
+}
+
+.birthdayMessage{
+
+    color:white;
+
+    font-size:28px;
+
+    width:80%;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:floatHeart 6s linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(0) scale(.8);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   CONFETTI
+========================== */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:8px;
+
+    height:16px;
+
+    border-radius:2px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:fallConfetti 5s linear forwards;
+
+}
+
+@keyframes fallConfetti{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+#memoryImage{
+
+    user-select:none;
+    -webkit-user-drag:none;
+
+}

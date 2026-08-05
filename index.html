@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="flowers"></div>
+
+<!-- Loading Screen -->
+
+<div id="loadingScreen">
+
+    <div id="loadingFlowers"></div>
+
+    <div class="loader">
+
+        <div class="loadingHeart">❤️</div>
+
+        <h2>Loading Your Surprise...</h2>
+
+        <div class="progress-bar">
+
+            <div id="progress"></div>
+
+        </div>
+
+        <p id="loadingText">0%</p>
+
+    </div>
+
+</div>
+
+<!-- Main Website -->
+<div id="welcomeScene" class="scene">
+
+    <div class="container">
+
+        <h1>Happy Birthday Saee ❤️</h1>
+
+        <p>
+            Every memory with you is
+            my favorite adventure.
+        </p>
+
+        <button id="beginJourneyBtn">
+            Begin Our Journey ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Story Screen -->
+<div id="chapterOne" class="scene">
+
+    <h1 id="chapterOneTitle"></h1>
+
+    <p id="chapterOneText"></p>
+
+    <button id="continueBtn">
+        ❤️ Continue Our Story ❤️
+    </button>
+
+</div>
+
+<!-- ==========================
+     CHAPTER One
+========================== -->
+
+<div id="chapterOne" class="scene">
+
+    <div class="container">
+
+        <h1 id="chapterOneTitle"></h1>
+
+        <p id="chapterOneText"></p>
+
+        <button id="continueBtn">
+            ❤️ Continue Our Story ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     CHAPTER TWO
+========================== -->
+
+<div id="chapterTwo" class="scene">
+
+    <div class="container">
+
+        <h1 id="chapterTwoTitle"></h1>
+
+        <p id="chapterTwoText"></p>
+
+        <button id="galleryBtn">
+            Our Beautiful Memories 📸
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     CHAPTER THREE - GALLERY
+========================== -->
+
+<div id="chapterThree" class="scene">
+
+    <div class="container">
+
+        <img id="memoryImage" src="" alt="Memory">
+
+        <h1 id="memoryTitle"></h1>
+
+        <p id="memoryText"></p>
+
+        <button id="nextMemoryBtn">
+            ❤️ Next Memory ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+        CHAPTER FOUR - VIDEO
+========================== -->
+
+<div id="chapterFour" class="scene">
+
+    <div class="container">
+
+        <h1>🎥 Our Story</h1>
+
+        <video
+            id="loveVideo"
+            controls
+            autoplay
+            playsinline>
+
+            <source src="Videos/cinematic-Video-Saee.mp4" type="video/mp4">
+
+        </video>
+
+        <br><br>
+
+        <button id="letterBtn">
+            💌 One Last Thing...
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     CHAPTER FIVE - LETTER
+========================== -->
+
+<div id="chapterFive" class="scene">
+
+    <div class="container">
+
+        <h1 id="letterTitle"></h1>
+
+        <p id="letterText"></p>
+
+        <button id="finalBtn">
+            🎂 Happy Birthday ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     CHAPTER SIX - FINALE
+========================== -->
+
+<div id="chapterSix">
+
+    <h1 class="birthdayTitle">
+        🎂 Happy Birthday Saee ❤️
+    </h1>
+
+    <p class="birthdayMessage">
+
+        May every dream of yours come true.<br><br>
+
+        Thank you for coming into my life.<br><br>
+
+        I love you today... tomorrow...<br>
+        and every day after that. ❤️
+
+    </p>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music/happy-birthday-piano.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
