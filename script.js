@@ -699,7 +699,7 @@ function showMemory(index){
 
     if(index === memories.length - 1){
 
-        nextMemoryBtn.innerHTML = "❤️ Watch Our Story ❤️";
+        nextMemoryBtn.innerHTML = "❤️ Let's watch you smile ❤️";
 
     }else{
 
