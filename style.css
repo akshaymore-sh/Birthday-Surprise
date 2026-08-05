@@ -10,9 +10,12 @@ body{
     padding:0;
 
     width:100%;
-    height:100vh;
 
-    overflow:hidden;
+    min-height:100vh;
+    min-height:100dvh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
 
     font-family:'Poppins', sans-serif;
 
@@ -351,29 +354,35 @@ button:hover{
 
 .scene{
 
-    position:absolute;
+    position:fixed;
 
     top:0;
     left:0;
 
     width:100%;
-    height:100vh;
+    min-height:100vh;
+    min-height:100dvh;
 
     display:none;
 
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
 
     flex-direction:column;
 
     text-align:center;
 
+    padding:20px;
+    padding-top:40px;
+    padding-bottom:40px;
+
+    overflow-y:auto;
+
     opacity:0;
 
     transition:opacity .8s ease;
 
 }
-
 
 /* ===========================
    Chapter One
@@ -688,14 +697,26 @@ button:hover{
         padding:14px 28px;
     }
 
+    .scene{
+
+        justify-content:flex-start;
+
+        padding-top:30px;
+        padding-bottom:40px;
+
+        overflow-y:auto;
+
+    }
+
     .container{
         width:92%;
         padding:25px;
+        margin:20px auto;
     }
 
     #memoryImage{
         width:100%;
-        max-width:300px;
+        max-width:260px;
     }
 
     .birthdayTitle{
